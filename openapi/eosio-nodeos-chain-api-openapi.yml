@@ -1,0 +1,343 @@
+openapi: 3.1.0
+info:
+  title: EOSIO / Antelope Nodeos Chain API
+  description: >-
+    HTTP/JSON RPC interface exposed by the chain_api_plugin in nodeos, the
+    reference EOSIO (now Antelope) blockchain node implementation. The chain
+    API allows clients to read blockchain state, fetch blocks and accounts,
+    inspect ABI and contract data, and submit signed transactions to the
+    network.
+  version: '1.0'
+  contact:
+    name: EOS Network Foundation
+    url: https://eosnetwork.com/
+  license:
+    name: MIT
+    url: https://github.com/AntelopeIO/leap/blob/main/LICENSE
+servers:
+  - url: '{node}/v1/chain'
+    description: Nodeos HTTP RPC endpoint with chain_api_plugin enabled.
+    variables:
+      node:
+        default: https://eos.greymass.com
+        description: Base URL of an EOS/Antelope node.
+paths:
+  /get_info:
+    get:
+      summary: Get chain information
+      description: Returns general state information about the blockchain, including the latest block, head block producer, and chain ID.
+      operationId: getInfo
+      responses:
+        '200':
+          description: Current chain state.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChainInfo'
+  /get_block:
+    post:
+      summary: Get a block by ID or number
+      description: Returns the contents of a block identified by its block number or block ID.
+      operationId: getBlock
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                block_num_or_id:
+                  type: string
+                  description: Block number (decimal) or block ID (hex).
+                  example: '12345678'
+              required:
+                - block_num_or_id
+      responses:
+        '200':
+          description: Block contents.
+          content:
+            application/json:
+              schema:
+                type: object
+  /get_account:
+    post:
+      summary: Get account information
+      description: Returns metadata about an account, including resources (RAM, CPU, NET), permissions, voting info, and linked authorities.
+      operationId: getAccount
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_name:
+                  type: string
+                  description: Account name (12-character EOS account).
+                  example: eosio
+              required:
+                - account_name
+      responses:
+        '200':
+          description: Account information.
+          content:
+            application/json:
+              schema:
+                type: object
+  /get_abi:
+    post:
+      summary: Get the ABI for a contract account
+      description: Returns the application binary interface (ABI) currently set for the given account, used to encode and decode actions and table rows.
+      operationId: getAbi
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_name:
+                  type: string
+                  example: eosio.token
+              required:
+                - account_name
+      responses:
+        '200':
+          description: ABI for the account.
+          content:
+            application/json:
+              schema:
+                type: object
+  /get_code:
+    post:
+      summary: Get contract code for an account
+      description: Returns the WASM code hash and ABI for a contract account.
+      operationId: getCode
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_name:
+                  type: string
+                code_as_wasm:
+                  type: integer
+                  default: 1
+              required:
+                - account_name
+      responses:
+        '200':
+          description: Code information.
+          content:
+            application/json:
+              schema:
+                type: object
+  /get_currency_balance:
+    post:
+      summary: Get currency balance for an account
+      description: Returns the balance of a token symbol held by an account on a given token contract.
+      operationId: getCurrencyBalance
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+                  description: Token contract account.
+                  example: eosio.token
+                account:
+                  type: string
+                  description: Account whose balance to query.
+                symbol:
+                  type: string
+                  description: Token symbol (e.g. EOS).
+              required:
+                - code
+                - account
+      responses:
+        '200':
+          description: List of asset strings representing balances.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+  /get_table_rows:
+    post:
+      summary: Read rows from a contract table
+      description: Returns rows from a smart contract's multi_index table, given the contract account, scope, and table name.
+      operationId: getTableRows
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+                  description: Contract account that hosts the table.
+                scope:
+                  type: string
+                  description: Scope within the contract.
+                table:
+                  type: string
+                  description: Table name.
+                json:
+                  type: boolean
+                  default: true
+                limit:
+                  type: integer
+                  default: 10
+                lower_bound:
+                  type: string
+                upper_bound:
+                  type: string
+              required:
+                - code
+                - scope
+                - table
+      responses:
+        '200':
+          description: Table rows.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  rows:
+                    type: array
+                    items:
+                      type: object
+                  more:
+                    type: boolean
+  /push_transaction:
+    post:
+      summary: Push a signed transaction
+      description: Submits a signed transaction to the blockchain for execution. Deprecated in favor of /send_transaction on newer nodeos releases.
+      operationId: pushTransaction
+      deprecated: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Transaction processing result.
+          content:
+            application/json:
+              schema:
+                type: object
+  /send_transaction:
+    post:
+      summary: Send a signed transaction
+      description: Submits a signed transaction to the blockchain. Replaces push_transaction on modern nodeos releases.
+      operationId: sendTransaction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                signatures:
+                  type: array
+                  items:
+                    type: string
+                compression:
+                  type: string
+                  enum:
+                    - none
+                    - zlib
+                  default: none
+                packed_context_free_data:
+                  type: string
+                packed_trx:
+                  type: string
+              required:
+                - signatures
+                - packed_trx
+      responses:
+        '200':
+          description: Transaction processing result.
+          content:
+            application/json:
+              schema:
+                type: object
+  /get_required_keys:
+    post:
+      summary: Get required keys for a transaction
+      description: Given a transaction and a set of available keys, returns the subset of keys actually required to authorize the transaction.
+      operationId: getRequiredKeys
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                transaction:
+                  type: object
+                available_keys:
+                  type: array
+                  items:
+                    type: string
+              required:
+                - transaction
+                - available_keys
+      responses:
+        '200':
+          description: Required keys.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  required_keys:
+                    type: array
+                    items:
+                      type: string
+components:
+  schemas:
+    ChainInfo:
+      type: object
+      properties:
+        server_version:
+          type: string
+        chain_id:
+          type: string
+        head_block_num:
+          type: integer
+        last_irreversible_block_num:
+          type: integer
+        last_irreversible_block_id:
+          type: string
+        head_block_id:
+          type: string
+        head_block_time:
+          type: string
+          format: date-time
+        head_block_producer:
+          type: string
+        virtual_block_cpu_limit:
+          type: integer
+        virtual_block_net_limit:
+          type: integer
+        block_cpu_limit:
+          type: integer
+        block_net_limit:
+          type: integer
+        server_version_string:
+          type: string
+        fork_db_head_block_num:
+          type: integer
+        fork_db_head_block_id:
+          type: string
