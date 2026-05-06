@@ -1,0 +1,340 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: EOSIO / Antelope Nodeos Chain API
+  description: HTTP/JSON RPC interface exposed by the chain_api_plugin in nodeos, the reference EOSIO (now Antelope) blockchain
+    node implementation. The chain API allows clients to read blockchain state, fetch blocks and accounts, inspect ABI and
+    contract data, and submit signed transactions to the network.
+  tags:
+  - Eosio
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: eosio
+    baseUri: https://eos.greymass.com/v1/chain
+    description: EOSIO / Antelope Nodeos Chain API HTTP API.
+    resources:
+    - name: get-info
+      path: /get_info
+      operations:
+      - name: getinfo
+        method: GET
+        description: Get chain information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: get-block
+      path: /get_block
+      operations:
+      - name: getblock
+        method: POST
+        description: Get a block by ID or number
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: get-account
+      path: /get_account
+      operations:
+      - name: getaccount
+        method: POST
+        description: Get account information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: get-abi
+      path: /get_abi
+      operations:
+      - name: getabi
+        method: POST
+        description: Get the ABI for a contract account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: get-code
+      path: /get_code
+      operations:
+      - name: getcode
+        method: POST
+        description: Get contract code for an account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: get-currency-balance
+      path: /get_currency_balance
+      operations:
+      - name: getcurrencybalance
+        method: POST
+        description: Get currency balance for an account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: get-table-rows
+      path: /get_table_rows
+      operations:
+      - name: gettablerows
+        method: POST
+        description: Read rows from a contract table
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: push-transaction
+      path: /push_transaction
+      operations:
+      - name: pushtransaction
+        method: POST
+        description: Push a signed transaction
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: send-transaction
+      path: /send_transaction
+      operations:
+      - name: sendtransaction
+        method: POST
+        description: Send a signed transaction
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: get-required-keys
+      path: /get_required_keys
+      operations:
+      - name: getrequiredkeys
+        method: POST
+        description: Get required keys for a transaction
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: eosio-rest
+    description: REST adapter for EOSIO / Antelope Nodeos Chain API.
+    resources:
+    - path: /get_info
+      name: getinfo
+      operations:
+      - method: GET
+        name: getinfo
+        description: Get chain information
+        call: eosio.getinfo
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /get_block
+      name: getblock
+      operations:
+      - method: POST
+        name: getblock
+        description: Get a block by ID or number
+        call: eosio.getblock
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /get_account
+      name: getaccount
+      operations:
+      - method: POST
+        name: getaccount
+        description: Get account information
+        call: eosio.getaccount
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /get_abi
+      name: getabi
+      operations:
+      - method: POST
+        name: getabi
+        description: Get the ABI for a contract account
+        call: eosio.getabi
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /get_code
+      name: getcode
+      operations:
+      - method: POST
+        name: getcode
+        description: Get contract code for an account
+        call: eosio.getcode
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /get_currency_balance
+      name: getcurrencybalance
+      operations:
+      - method: POST
+        name: getcurrencybalance
+        description: Get currency balance for an account
+        call: eosio.getcurrencybalance
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /get_table_rows
+      name: gettablerows
+      operations:
+      - method: POST
+        name: gettablerows
+        description: Read rows from a contract table
+        call: eosio.gettablerows
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /push_transaction
+      name: pushtransaction
+      operations:
+      - method: POST
+        name: pushtransaction
+        description: Push a signed transaction
+        call: eosio.pushtransaction
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /send_transaction
+      name: sendtransaction
+      operations:
+      - method: POST
+        name: sendtransaction
+        description: Send a signed transaction
+        call: eosio.sendtransaction
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /get_required_keys
+      name: getrequiredkeys
+      operations:
+      - method: POST
+        name: getrequiredkeys
+        description: Get required keys for a transaction
+        call: eosio.getrequiredkeys
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: eosio-mcp
+    transport: http
+    description: MCP adapter for EOSIO / Antelope Nodeos Chain API for AI agent use.
+    tools:
+    - name: getinfo
+      description: Get chain information
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: eosio.getinfo
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getblock
+      description: Get a block by ID or number
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: eosio.getblock
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getaccount
+      description: Get account information
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: eosio.getaccount
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getabi
+      description: Get the ABI for a contract account
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: eosio.getabi
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcode
+      description: Get contract code for an account
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: eosio.getcode
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcurrencybalance
+      description: Get currency balance for an account
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: eosio.getcurrencybalance
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gettablerows
+      description: Read rows from a contract table
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: eosio.gettablerows
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: pushtransaction
+      description: Push a signed transaction
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: eosio.pushtransaction
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sendtransaction
+      description: Send a signed transaction
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: eosio.sendtransaction
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getrequiredkeys
+      description: Get required keys for a transaction
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: eosio.getrequiredkeys
+      outputParameters:
+      - type: object
+        mapping: $.
