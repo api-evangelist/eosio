@@ -109,13 +109,13 @@ common:
     type: FAQ
   - url: https://github.com/AntelopeIO
     name: AntelopeIO GitHub Organization
-    type: GitHub Organization
+    type: GitHubOrganization
   - url: https://github.com/AntelopeIO/leap
     name: Leap (nodeos) GitHub Repository
     type: GitHubRepository
   - url: https://github.com/AntelopeIO/leap/releases
     name: Leap Releases
-    type: Change Log
+    type: ChangeLog
   - url: https://eos.io/legal/privacy-policy/
     name: Privacy Policy
     type: PrivacyPolicy
