@@ -1,0 +1,445 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: EOSIO / Antelope Nodeos Chain API
+  description: 'EOSIO / Antelope Nodeos Chain API. 10 operations. Lead operation: Get the ABI for a contract account. Self-contained
+    Naftiko capability covering one Eosio business surface.'
+  tags:
+  - Eosio
+  - EOSIO / Antelope Nodeos Chain API
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    EOSIO_API_KEY: EOSIO_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: nodeos-chain
+    baseUri: ''
+    description: EOSIO / Antelope Nodeos Chain API business capability. Self-contained, no shared references.
+    resources:
+    - name: get_abi
+      path: /get_abi
+      operations:
+      - name: getabi
+        method: POST
+        description: Get the ABI for a contract account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: get_account
+      path: /get_account
+      operations:
+      - name: getaccount
+        method: POST
+        description: Get account information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: get_block
+      path: /get_block
+      operations:
+      - name: getblock
+        method: POST
+        description: Get a block by ID or number
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: get_code
+      path: /get_code
+      operations:
+      - name: getcode
+        method: POST
+        description: Get contract code for an account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: get_currency_balance
+      path: /get_currency_balance
+      operations:
+      - name: getcurrencybalance
+        method: POST
+        description: Get currency balance for an account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: get_info
+      path: /get_info
+      operations:
+      - name: getinfo
+        method: GET
+        description: Get chain information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: get_required_keys
+      path: /get_required_keys
+      operations:
+      - name: getrequiredkeys
+        method: POST
+        description: Get required keys for a transaction
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: get_table_rows
+      path: /get_table_rows
+      operations:
+      - name: gettablerows
+        method: POST
+        description: Read rows from a contract table
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: push_transaction
+      path: /push_transaction
+      operations:
+      - name: pushtransaction
+        method: POST
+        description: Push a signed transaction
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: send_transaction
+      path: /send_transaction
+      operations:
+      - name: sendtransaction
+        method: POST
+        description: Send a signed transaction
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: nodeos-chain-rest
+    port: 8080
+    description: REST adapter for EOSIO / Antelope Nodeos Chain API. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/get-abi
+      name: get-abi
+      description: REST surface for get_abi.
+      operations:
+      - method: POST
+        name: getabi
+        description: Get the ABI for a contract account
+        call: nodeos-chain.getabi
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-account
+      name: get-account
+      description: REST surface for get_account.
+      operations:
+      - method: POST
+        name: getaccount
+        description: Get account information
+        call: nodeos-chain.getaccount
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-block
+      name: get-block
+      description: REST surface for get_block.
+      operations:
+      - method: POST
+        name: getblock
+        description: Get a block by ID or number
+        call: nodeos-chain.getblock
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-code
+      name: get-code
+      description: REST surface for get_code.
+      operations:
+      - method: POST
+        name: getcode
+        description: Get contract code for an account
+        call: nodeos-chain.getcode
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-currency-balance
+      name: get-currency-balance
+      description: REST surface for get_currency_balance.
+      operations:
+      - method: POST
+        name: getcurrencybalance
+        description: Get currency balance for an account
+        call: nodeos-chain.getcurrencybalance
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-info
+      name: get-info
+      description: REST surface for get_info.
+      operations:
+      - method: GET
+        name: getinfo
+        description: Get chain information
+        call: nodeos-chain.getinfo
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-required-keys
+      name: get-required-keys
+      description: REST surface for get_required_keys.
+      operations:
+      - method: POST
+        name: getrequiredkeys
+        description: Get required keys for a transaction
+        call: nodeos-chain.getrequiredkeys
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-table-rows
+      name: get-table-rows
+      description: REST surface for get_table_rows.
+      operations:
+      - method: POST
+        name: gettablerows
+        description: Read rows from a contract table
+        call: nodeos-chain.gettablerows
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/push-transaction
+      name: push-transaction
+      description: REST surface for push_transaction.
+      operations:
+      - method: POST
+        name: pushtransaction
+        description: Push a signed transaction
+        call: nodeos-chain.pushtransaction
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/send-transaction
+      name: send-transaction
+      description: REST surface for send_transaction.
+      operations:
+      - method: POST
+        name: sendtransaction
+        description: Send a signed transaction
+        call: nodeos-chain.sendtransaction
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: nodeos-chain-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for EOSIO / Antelope Nodeos Chain API. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-abi-contract-account
+      description: Get the ABI for a contract account
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: nodeos-chain.getabi
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-account-information
+      description: Get account information
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: nodeos-chain.getaccount
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-block-id-number
+      description: Get a block by ID or number
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: nodeos-chain.getblock
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-contract-code-account
+      description: Get contract code for an account
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: nodeos-chain.getcode
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-currency-balance-account
+      description: Get currency balance for an account
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: nodeos-chain.getcurrencybalance
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-chain-information
+      description: Get chain information
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: nodeos-chain.getinfo
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-required-keys-transaction
+      description: Get required keys for a transaction
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: nodeos-chain.getrequiredkeys
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: read-rows-contract-table
+      description: Read rows from a contract table
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: nodeos-chain.gettablerows
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: push-signed-transaction
+      description: Push a signed transaction
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: nodeos-chain.pushtransaction
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: send-signed-transaction
+      description: Send a signed transaction
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: nodeos-chain.sendtransaction
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
