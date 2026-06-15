@@ -1,0 +1,1059 @@
+{
+  "item": [
+    {
+      "id": "c132ec19-c007-4785-bdf8-0e4ce91337b4",
+      "name": "Get chain information",
+      "request": {
+        "name": "Get chain information",
+        "description": {
+          "content": "Returns general state information about the blockchain, including the latest block, head block producer, and chain ID.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "get_info"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Base URL of an EOS/Antelope node.",
+              "type": "any",
+              "value": "{{node}}",
+              "key": "node"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "efb4dcce-d8f7-4e52-9238-8541b8d997f1",
+          "name": "Current chain state.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "get_info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Base URL of an EOS/Antelope node.",
+                  "type": "any",
+                  "value": "{{node}}",
+                  "key": "node"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"server_version\": \"string\",\n  \"chain_id\": \"string\",\n  \"head_block_num\": 3054,\n  \"last_irreversible_block_num\": 5776,\n  \"last_irreversible_block_id\": \"string\",\n  \"head_block_id\": \"string\",\n  \"head_block_time\": \"2024-04-01T02:31:12.014Z\",\n  \"head_block_producer\": \"string\",\n  \"virtual_block_cpu_limit\": 3538,\n  \"virtual_block_net_limit\": 3847,\n  \"block_cpu_limit\": 7918,\n  \"block_net_limit\": 5385,\n  \"server_version_string\": \"string\",\n  \"fork_db_head_block_num\": 5234,\n  \"fork_db_head_block_id\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "4adce47d-e4e5-4b0f-9cc7-979cb0f9e0f9",
+      "name": "Get a block by ID or number",
+      "request": {
+        "name": "Get a block by ID or number",
+        "description": {
+          "content": "Returns the contents of a block identified by its block number or block ID.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "get_block"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Base URL of an EOS/Antelope node.",
+              "type": "any",
+              "value": "{{node}}",
+              "key": "node"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"block_num_or_id\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "aa6ab1ae-1c15-4ad7-a824-0b4628ef85fe",
+          "name": "Block contents.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "get_block"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Base URL of an EOS/Antelope node.",
+                  "type": "any",
+                  "value": "{{node}}",
+                  "key": "node"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"block_num_or_id\": \"12345678\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "f6d93cc5-2237-4339-b0ff-4e5a271605ee",
+      "name": "Get account information",
+      "request": {
+        "name": "Get account information",
+        "description": {
+          "content": "Returns metadata about an account, including resources (RAM, CPU, NET), permissions, voting info, and linked authorities.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "get_account"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Base URL of an EOS/Antelope node.",
+              "type": "any",
+              "value": "{{node}}",
+              "key": "node"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"account_name\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "96c7e8a6-39d1-4b05-84c0-ec1140cf6246",
+          "name": "Account information.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "get_account"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Base URL of an EOS/Antelope node.",
+                  "type": "any",
+                  "value": "{{node}}",
+                  "key": "node"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"account_name\": \"eosio\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "d04dea80-4ee1-4a0e-ba88-c55e4d5da74c",
+      "name": "Get the ABI for a contract account",
+      "request": {
+        "name": "Get the ABI for a contract account",
+        "description": {
+          "content": "Returns the application binary interface (ABI) currently set for the given account, used to encode and decode actions and table rows.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "get_abi"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Base URL of an EOS/Antelope node.",
+              "type": "any",
+              "value": "{{node}}",
+              "key": "node"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"account_name\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "b56b68a6-d6c8-40f7-a4c5-5b1163c742ac",
+          "name": "ABI for the account.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "get_abi"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Base URL of an EOS/Antelope node.",
+                  "type": "any",
+                  "value": "{{node}}",
+                  "key": "node"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"account_name\": \"eosio.token\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "2a792252-0f49-4ba4-89e4-52fd0045b9b9",
+      "name": "Get contract code for an account",
+      "request": {
+        "name": "Get contract code for an account",
+        "description": {
+          "content": "Returns the WASM code hash and ABI for a contract account.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "get_code"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Base URL of an EOS/Antelope node.",
+              "type": "any",
+              "value": "{{node}}",
+              "key": "node"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"account_name\": \"<string>\",\n  \"code_as_wasm\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "ff43b179-8524-4bf3-98c7-4c166673fe4f",
+          "name": "Code information.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "get_code"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Base URL of an EOS/Antelope node.",
+                  "type": "any",
+                  "value": "{{node}}",
+                  "key": "node"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"account_name\": \"<string>\",\n  \"code_as_wasm\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "1586961f-9f0f-4f7b-9ce5-24d5bdf4304c",
+      "name": "Get currency balance for an account",
+      "request": {
+        "name": "Get currency balance for an account",
+        "description": {
+          "content": "Returns the balance of a token symbol held by an account on a given token contract.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "get_currency_balance"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Base URL of an EOS/Antelope node.",
+              "type": "any",
+              "value": "{{node}}",
+              "key": "node"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"code\": \"<string>\",\n  \"account\": \"<string>\",\n  \"symbol\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "3ca3673d-602b-470a-ac95-611ec0291f60",
+          "name": "List of asset strings representing balances.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "get_currency_balance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Base URL of an EOS/Antelope node.",
+                  "type": "any",
+                  "value": "{{node}}",
+                  "key": "node"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"eosio.token\",\n  \"account\": \"<string>\",\n  \"symbol\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  \"string\",\n  \"string\"\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "5bf1cb4d-3bab-4f8b-839e-ed55b7a3d5a9",
+      "name": "Read rows from a contract table",
+      "request": {
+        "name": "Read rows from a contract table",
+        "description": {
+          "content": "Returns rows from a smart contract's multi_index table, given the contract account, scope, and table name.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "get_table_rows"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Base URL of an EOS/Antelope node.",
+              "type": "any",
+              "value": "{{node}}",
+              "key": "node"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"code\": \"<string>\",\n  \"scope\": \"<string>\",\n  \"table\": \"<string>\",\n  \"json\": true,\n  \"limit\": 10,\n  \"lower_bound\": \"<string>\",\n  \"upper_bound\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "071bf159-d270-44eb-983f-bbf12f34afd0",
+          "name": "Table rows.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "get_table_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Base URL of an EOS/Antelope node.",
+                  "type": "any",
+                  "value": "{{node}}",
+                  "key": "node"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<string>\",\n  \"scope\": \"<string>\",\n  \"table\": \"<string>\",\n  \"json\": true,\n  \"limit\": 10,\n  \"lower_bound\": \"<string>\",\n  \"upper_bound\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"more\": false\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "e94e24f0-fe7d-448d-ab7f-4a9201b70be7",
+      "name": "Push a signed transaction",
+      "request": {
+        "name": "Push a signed transaction",
+        "description": {
+          "content": "Submits a signed transaction to the blockchain for execution. Deprecated in favor of /send_transaction on newer nodeos releases.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "push_transaction"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Base URL of an EOS/Antelope node.",
+              "type": "any",
+              "value": "{{node}}",
+              "key": "node"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "<object>",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "1ec839dd-42eb-47cf-9357-b40db189fc0d",
+          "name": "Transaction processing result.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "push_transaction"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Base URL of an EOS/Antelope node.",
+                  "type": "any",
+                  "value": "{{node}}",
+                  "key": "node"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "353a2165-9b4f-436a-a7ff-2bc197f54f48",
+      "name": "Send a signed transaction",
+      "request": {
+        "name": "Send a signed transaction",
+        "description": {
+          "content": "Submits a signed transaction to the blockchain. Replaces push_transaction on modern nodeos releases.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "send_transaction"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Base URL of an EOS/Antelope node.",
+              "type": "any",
+              "value": "{{node}}",
+              "key": "node"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"signatures\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"packed_trx\": \"<string>\",\n  \"compression\": \"none\",\n  \"packed_context_free_data\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "0bb07338-fab2-4533-b9c0-38abb0ba433e",
+          "name": "Transaction processing result.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "send_transaction"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Base URL of an EOS/Antelope node.",
+                  "type": "any",
+                  "value": "{{node}}",
+                  "key": "node"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"signatures\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"packed_trx\": \"<string>\",\n  \"compression\": \"none\",\n  \"packed_context_free_data\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "4cc9892b-d55c-48b5-87a2-e7845f8d6a53",
+      "name": "Get required keys for a transaction",
+      "request": {
+        "name": "Get required keys for a transaction",
+        "description": {
+          "content": "Given a transaction and a set of available keys, returns the subset of keys actually required to authorize the transaction.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "get_required_keys"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Base URL of an EOS/Antelope node.",
+              "type": "any",
+              "value": "{{node}}",
+              "key": "node"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"transaction\": \"<object>\",\n  \"available_keys\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "871469a8-323a-447a-b869-d7d2907ab877",
+          "name": "Required keys.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "get_required_keys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Base URL of an EOS/Antelope node.",
+                  "type": "any",
+                  "value": "{{node}}",
+                  "key": "node"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"transaction\": \"<object>\",\n  \"available_keys\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"required_keys\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Base URL of an EOS/Antelope node.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://eos.greymass.com",
+      "key": "node"
+    },
+    {
+      "type": "string",
+      "value": "{{node}}/v1/chain",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "890c7537-41c4-4172-bb63-9196a430f315",
+    "name": "EOSIO / Antelope Nodeos Chain API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HTTP/JSON RPC interface exposed by the chain_api_plugin in nodeos, the reference EOSIO (now Antelope) blockchain node implementation. The chain API allows clients to read blockchain state, fetch blocks and accounts, inspect ABI and contract data, and submit signed transactions to the network.\n\nContact Support:\n Name: EOS Network Foundation",
+      "type": "text/plain"
+    }
+  }
+}

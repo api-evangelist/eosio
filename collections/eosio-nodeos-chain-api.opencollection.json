@@ -1,0 +1,156 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "EOSIO / Antelope Nodeos Chain API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get chain information",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{node}/v1/chain/get_info"
+      },
+      "docs": "Returns general state information about the blockchain, including the latest block, head block producer, and chain ID."
+    },
+    {
+      "info": {
+        "name": "Get a block by ID or number",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{node}/v1/chain/get_block",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Returns the contents of a block identified by its block number or block ID."
+    },
+    {
+      "info": {
+        "name": "Get account information",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{node}/v1/chain/get_account",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Returns metadata about an account, including resources (RAM, CPU, NET), permissions, voting info, and linked authorities."
+    },
+    {
+      "info": {
+        "name": "Get the ABI for a contract account",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{node}/v1/chain/get_abi",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Returns the application binary interface (ABI) currently set for the given account, used to encode and decode actions and table rows."
+    },
+    {
+      "info": {
+        "name": "Get contract code for an account",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{node}/v1/chain/get_code",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Returns the WASM code hash and ABI for a contract account."
+    },
+    {
+      "info": {
+        "name": "Get currency balance for an account",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{node}/v1/chain/get_currency_balance",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Returns the balance of a token symbol held by an account on a given token contract."
+    },
+    {
+      "info": {
+        "name": "Read rows from a contract table",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{node}/v1/chain/get_table_rows",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Returns rows from a smart contract's multi_index table, given the contract account, scope, and table name."
+    },
+    {
+      "info": {
+        "name": "Push a signed transaction",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{node}/v1/chain/push_transaction",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Submits a signed transaction to the blockchain for execution. Deprecated in favor of /send_transaction on newer nodeos releases."
+    },
+    {
+      "info": {
+        "name": "Send a signed transaction",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{node}/v1/chain/send_transaction",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Submits a signed transaction to the blockchain. Replaces push_transaction on modern nodeos releases."
+    },
+    {
+      "info": {
+        "name": "Get required keys for a transaction",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{node}/v1/chain/get_required_keys",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Given a transaction and a set of available keys, returns the subset of keys actually required to authorize the transaction."
+    }
+  ],
+  "bundled": true
+}
