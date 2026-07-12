@@ -82,6 +82,8 @@ apis:
       The net_api_plugin exposes endpoints under /v1/net for inspecting and managing peer-to-peer connections of an
       Antelope node, including connections, status, connect, and disconnect operations.
 common:
+  - type: DomainSecurity
+    url: security/eosio-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/eosio
   - url: https://eosnetwork.com/
