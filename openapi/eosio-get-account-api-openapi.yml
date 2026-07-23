@@ -1,0 +1,48 @@
+openapi: 3.1.0
+info:
+  title: EOSIO / Antelope Nodeos Chain Get Abi Get Account API
+  description: HTTP/JSON RPC interface exposed by the chain_api_plugin in nodeos, the reference EOSIO (now Antelope) blockchain node implementation. The chain API allows clients to read blockchain state, fetch blocks and accounts, inspect ABI and contract data, and submit signed transactions to the network.
+  version: '1.0'
+  contact:
+    name: EOS Network Foundation
+    url: https://eosnetwork.com/
+  license:
+    name: MIT
+    url: https://github.com/AntelopeIO/leap/blob/main/LICENSE
+servers:
+- url: '{node}/v1/chain'
+  description: Nodeos HTTP RPC endpoint with chain_api_plugin enabled.
+  variables:
+    node:
+      default: https://eos.greymass.com
+      description: Base URL of an EOS/Antelope node.
+tags:
+- name: Get Account
+paths:
+  /get_account:
+    post:
+      summary: Get account information
+      description: Returns metadata about an account, including resources (RAM, CPU, NET), permissions, voting info, and linked authorities.
+      operationId: getAccount
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_name:
+                  type: string
+                  description: Account name (12-character EOS account).
+                  example: eosio
+              required:
+              - account_name
+      responses:
+        '200':
+          description: Account information.
+          content:
+            application/json:
+              schema:
+                type: object
+      tags:
+      - Get Account

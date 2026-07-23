@@ -1,0 +1,72 @@
+openapi: 3.1.0
+info:
+  title: EOSIO / Antelope Nodeos Chain Get Abi Get Table Rows API
+  description: HTTP/JSON RPC interface exposed by the chain_api_plugin in nodeos, the reference EOSIO (now Antelope) blockchain node implementation. The chain API allows clients to read blockchain state, fetch blocks and accounts, inspect ABI and contract data, and submit signed transactions to the network.
+  version: '1.0'
+  contact:
+    name: EOS Network Foundation
+    url: https://eosnetwork.com/
+  license:
+    name: MIT
+    url: https://github.com/AntelopeIO/leap/blob/main/LICENSE
+servers:
+- url: '{node}/v1/chain'
+  description: Nodeos HTTP RPC endpoint with chain_api_plugin enabled.
+  variables:
+    node:
+      default: https://eos.greymass.com
+      description: Base URL of an EOS/Antelope node.
+tags:
+- name: Get Table Rows
+paths:
+  /get_table_rows:
+    post:
+      summary: Read rows from a contract table
+      description: Returns rows from a smart contract's multi_index table, given the contract account, scope, and table name.
+      operationId: getTableRows
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+                  description: Contract account that hosts the table.
+                scope:
+                  type: string
+                  description: Scope within the contract.
+                table:
+                  type: string
+                  description: Table name.
+                json:
+                  type: boolean
+                  default: true
+                limit:
+                  type: integer
+                  default: 10
+                lower_bound:
+                  type: string
+                upper_bound:
+                  type: string
+              required:
+              - code
+              - scope
+              - table
+      responses:
+        '200':
+          description: Table rows.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  rows:
+                    type: array
+                    items:
+                      type: object
+                  more:
+                    type: boolean
+      tags:
+      - Get Table Rows

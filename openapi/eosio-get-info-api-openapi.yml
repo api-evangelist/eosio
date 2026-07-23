@@ -1,0 +1,71 @@
+openapi: 3.1.0
+info:
+  title: EOSIO / Antelope Nodeos Chain Get Abi Get Info API
+  description: HTTP/JSON RPC interface exposed by the chain_api_plugin in nodeos, the reference EOSIO (now Antelope) blockchain node implementation. The chain API allows clients to read blockchain state, fetch blocks and accounts, inspect ABI and contract data, and submit signed transactions to the network.
+  version: '1.0'
+  contact:
+    name: EOS Network Foundation
+    url: https://eosnetwork.com/
+  license:
+    name: MIT
+    url: https://github.com/AntelopeIO/leap/blob/main/LICENSE
+servers:
+- url: '{node}/v1/chain'
+  description: Nodeos HTTP RPC endpoint with chain_api_plugin enabled.
+  variables:
+    node:
+      default: https://eos.greymass.com
+      description: Base URL of an EOS/Antelope node.
+tags:
+- name: Get Info
+paths:
+  /get_info:
+    get:
+      summary: Get chain information
+      description: Returns general state information about the blockchain, including the latest block, head block producer, and chain ID.
+      operationId: getInfo
+      responses:
+        '200':
+          description: Current chain state.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChainInfo'
+      tags:
+      - Get Info
+components:
+  schemas:
+    ChainInfo:
+      type: object
+      properties:
+        server_version:
+          type: string
+        chain_id:
+          type: string
+        head_block_num:
+          type: integer
+        last_irreversible_block_num:
+          type: integer
+        last_irreversible_block_id:
+          type: string
+        head_block_id:
+          type: string
+        head_block_time:
+          type: string
+          format: date-time
+        head_block_producer:
+          type: string
+        virtual_block_cpu_limit:
+          type: integer
+        virtual_block_net_limit:
+          type: integer
+        block_cpu_limit:
+          type: integer
+        block_net_limit:
+          type: integer
+        server_version_string:
+          type: string
+        fork_db_head_block_num:
+          type: integer
+        fork_db_head_block_id:
+          type: string

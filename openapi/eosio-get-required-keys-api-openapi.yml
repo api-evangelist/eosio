@@ -1,0 +1,56 @@
+openapi: 3.1.0
+info:
+  title: EOSIO / Antelope Nodeos Chain Get Abi Get Required Keys API
+  description: HTTP/JSON RPC interface exposed by the chain_api_plugin in nodeos, the reference EOSIO (now Antelope) blockchain node implementation. The chain API allows clients to read blockchain state, fetch blocks and accounts, inspect ABI and contract data, and submit signed transactions to the network.
+  version: '1.0'
+  contact:
+    name: EOS Network Foundation
+    url: https://eosnetwork.com/
+  license:
+    name: MIT
+    url: https://github.com/AntelopeIO/leap/blob/main/LICENSE
+servers:
+- url: '{node}/v1/chain'
+  description: Nodeos HTTP RPC endpoint with chain_api_plugin enabled.
+  variables:
+    node:
+      default: https://eos.greymass.com
+      description: Base URL of an EOS/Antelope node.
+tags:
+- name: Get Required Keys
+paths:
+  /get_required_keys:
+    post:
+      summary: Get required keys for a transaction
+      description: Given a transaction and a set of available keys, returns the subset of keys actually required to authorize the transaction.
+      operationId: getRequiredKeys
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                transaction:
+                  type: object
+                available_keys:
+                  type: array
+                  items:
+                    type: string
+              required:
+              - transaction
+              - available_keys
+      responses:
+        '200':
+          description: Required keys.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  required_keys:
+                    type: array
+                    items:
+                      type: string
+      tags:
+      - Get Required Keys

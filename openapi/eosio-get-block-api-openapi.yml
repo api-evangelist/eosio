@@ -1,0 +1,48 @@
+openapi: 3.1.0
+info:
+  title: EOSIO / Antelope Nodeos Chain Get Abi Get Block API
+  description: HTTP/JSON RPC interface exposed by the chain_api_plugin in nodeos, the reference EOSIO (now Antelope) blockchain node implementation. The chain API allows clients to read blockchain state, fetch blocks and accounts, inspect ABI and contract data, and submit signed transactions to the network.
+  version: '1.0'
+  contact:
+    name: EOS Network Foundation
+    url: https://eosnetwork.com/
+  license:
+    name: MIT
+    url: https://github.com/AntelopeIO/leap/blob/main/LICENSE
+servers:
+- url: '{node}/v1/chain'
+  description: Nodeos HTTP RPC endpoint with chain_api_plugin enabled.
+  variables:
+    node:
+      default: https://eos.greymass.com
+      description: Base URL of an EOS/Antelope node.
+tags:
+- name: Get Block
+paths:
+  /get_block:
+    post:
+      summary: Get a block by ID or number
+      description: Returns the contents of a block identified by its block number or block ID.
+      operationId: getBlock
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                block_num_or_id:
+                  type: string
+                  description: Block number (decimal) or block ID (hex).
+                  example: '12345678'
+              required:
+              - block_num_or_id
+      responses:
+        '200':
+          description: Block contents.
+          content:
+            application/json:
+              schema:
+                type: object
+      tags:
+      - Get Block
