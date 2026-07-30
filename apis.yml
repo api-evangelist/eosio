@@ -2,7 +2,19 @@ aid: eosio
 url: https://raw.githubusercontent.com/api-evangelist/eosio/refs/heads/main/apis.yml
 name: EOSIO
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/eosio.png
 tags:
   - Antelope
   - Blockchain
@@ -18,69 +30,182 @@ description: >-
   applications. Reference node software (nodeos) exposes HTTP/JSON RPC plugins for chain reads, history queries,
   transaction submission, and producer operations.
 apis:
-  - aid: eosio:nodeos-chain-api
-    name: EOSIO Nodeos Chain API
-    tags:
-      - Antelope
-      - Blockchain
-      - Chain
-      - JSON-RPC
-    humanURL: https://github.com/AntelopeIO/leap
-    properties:
-      - url: openapi/eosio-nodeos-chain-api-openapi.yml
-        type: OpenAPI
-      - url: https://github.com/AntelopeIO/leap
-        type: GitHubRepository
-      - url: https://developers.eos.io/
-        type: Documentation
-    description: >-
-      The chain_api_plugin in nodeos exposes JSON-RPC endpoints under /v1/chain for reading blockchain state, retrieving
-      blocks and accounts, inspecting smart contract ABIs and tables, and submitting signed transactions to the network.
-  - aid: eosio:nodeos-history-api
-    name: EOSIO Nodeos History API
-    tags:
-      - Antelope
-      - Blockchain
-      - History
-      - JSON-RPC
-    humanURL: https://github.com/AntelopeIO/leap
-    properties:
-      - url: https://github.com/AntelopeIO/leap
-        type: GitHubRepository
-      - url: https://developers.eos.io/
-        type: Documentation
-    description: >-
-      The history_api_plugin exposes endpoints under /v1/history for retrieving historical actions, transactions, key
-      accounts, and controlled accounts. On modern Antelope deployments this is typically replaced by external history
-      solutions like Hyperion or dfuse.
-  - aid: eosio:nodeos-producer-api
-    name: EOSIO Nodeos Producer API
-    tags:
-      - Antelope
-      - Block Production
-      - Blockchain
-      - JSON-RPC
-    humanURL: https://github.com/AntelopeIO/leap
-    properties:
-      - url: https://github.com/AntelopeIO/leap
-        type: GitHubRepository
-    description: >-
-      The producer_api_plugin exposes endpoints under /v1/producer for controlling block production on a node, including
-      pause, resume, schedule snapshots, and manage protocol features. Restricted to operators of block producing nodes.
-  - aid: eosio:nodeos-net-api
-    name: EOSIO Nodeos Net API
-    tags:
-      - Antelope
-      - Blockchain
-      - JSON-RPC
-      - Networking
-    humanURL: https://github.com/AntelopeIO/leap
-    properties:
-      - url: https://github.com/AntelopeIO/leap
-        type: GitHubRepository
-    description: >-
-      The net_api_plugin exposes endpoints under /v1/net for inspecting and managing peer-to-peer connections of an
-      Antelope node, including connections, status, connect, and disconnect operations.
+- aid: eosio:nodeos-history-api
+  name: EOSIO Nodeos History API
+  tags:
+  - Antelope
+  - Blockchain
+  - History
+  - JSON-RPC
+  humanURL: https://github.com/AntelopeIO/leap
+  properties:
+  - url: https://github.com/AntelopeIO/leap
+    type: GitHubRepository
+  - url: https://developers.eos.io/
+    type: Documentation
+  description: >-
+    The history_api_plugin exposes endpoints under /v1/history for retrieving historical actions, transactions,
+    key accounts, and controlled accounts. On modern Antelope deployments this is typically replaced by
+    external history solutions like Hyperion or dfuse.
+- aid: eosio:nodeos-producer-api
+  name: EOSIO Nodeos Producer API
+  tags:
+  - Antelope
+  - Block Production
+  - Blockchain
+  - JSON-RPC
+  humanURL: https://github.com/AntelopeIO/leap
+  properties:
+  - url: https://github.com/AntelopeIO/leap
+    type: GitHubRepository
+  description: >-
+    The producer_api_plugin exposes endpoints under /v1/producer for controlling block production on a
+    node, including pause, resume, schedule snapshots, and manage protocol features. Restricted to operators
+    of block producing nodes.
+- aid: eosio:nodeos-net-api
+  name: EOSIO Nodeos Net API
+  tags:
+  - Antelope
+  - Blockchain
+  - JSON-RPC
+  - Networking
+  humanURL: https://github.com/AntelopeIO/leap
+  properties:
+  - url: https://github.com/AntelopeIO/leap
+    type: GitHubRepository
+  description: >-
+    The net_api_plugin exposes endpoints under /v1/net for inspecting and managing peer-to-peer connections
+    of an Antelope node, including connections, status, connect, and disconnect operations.
+- aid: eosio:eosio-get-abi-api
+  name: EOSIO Get Abi API
+  description: The Get Abi API from EOSIO — 1 operation(s) for get abi.
+  humanURL: https://github.com/AntelopeIO/leap
+  tags:
+  - Get Abi
+  properties:
+  - type: OpenAPI
+    url: openapi/eosio-get-abi-api-openapi.yml
+  - type: GitHubRepository
+    url: https://github.com/AntelopeIO/leap
+  - type: Documentation
+    url: https://developers.eos.io/
+- aid: eosio:eosio-get-account-api
+  name: EOSIO Get Account API
+  description: The Get Account API from EOSIO — 1 operation(s) for get account.
+  humanURL: https://github.com/AntelopeIO/leap
+  tags:
+  - Get Account
+  properties:
+  - type: OpenAPI
+    url: openapi/eosio-get-account-api-openapi.yml
+  - type: GitHubRepository
+    url: https://github.com/AntelopeIO/leap
+  - type: Documentation
+    url: https://developers.eos.io/
+- aid: eosio:eosio-get-block-api
+  name: EOSIO Get Block API
+  description: The Get Block API from EOSIO — 1 operation(s) for get block.
+  humanURL: https://github.com/AntelopeIO/leap
+  tags:
+  - Get Block
+  properties:
+  - type: OpenAPI
+    url: openapi/eosio-get-block-api-openapi.yml
+  - type: GitHubRepository
+    url: https://github.com/AntelopeIO/leap
+  - type: Documentation
+    url: https://developers.eos.io/
+- aid: eosio:eosio-get-code-api
+  name: EOSIO Get Code API
+  description: The Get Code API from EOSIO — 1 operation(s) for get code.
+  humanURL: https://github.com/AntelopeIO/leap
+  tags:
+  - Get Code
+  properties:
+  - type: OpenAPI
+    url: openapi/eosio-get-code-api-openapi.yml
+  - type: GitHubRepository
+    url: https://github.com/AntelopeIO/leap
+  - type: Documentation
+    url: https://developers.eos.io/
+- aid: eosio:eosio-get-currency-balance-api
+  name: EOSIO Get Currency Balance API
+  description: The Get Currency Balance API from EOSIO — 1 operation(s) for get currency balance.
+  humanURL: https://github.com/AntelopeIO/leap
+  tags:
+  - Get Currency Balance
+  properties:
+  - type: OpenAPI
+    url: openapi/eosio-get-currency-balance-api-openapi.yml
+  - type: GitHubRepository
+    url: https://github.com/AntelopeIO/leap
+  - type: Documentation
+    url: https://developers.eos.io/
+- aid: eosio:eosio-get-info-api
+  name: EOSIO Get Info API
+  description: The Get Info API from EOSIO — 1 operation(s) for get info.
+  humanURL: https://github.com/AntelopeIO/leap
+  tags:
+  - Get Info
+  properties:
+  - type: OpenAPI
+    url: openapi/eosio-get-info-api-openapi.yml
+  - type: GitHubRepository
+    url: https://github.com/AntelopeIO/leap
+  - type: Documentation
+    url: https://developers.eos.io/
+- aid: eosio:eosio-get-required-keys-api
+  name: EOSIO Get Required Keys API
+  description: The Get Required Keys API from EOSIO — 1 operation(s) for get required keys.
+  humanURL: https://github.com/AntelopeIO/leap
+  tags:
+  - Get Required Keys
+  properties:
+  - type: OpenAPI
+    url: openapi/eosio-get-required-keys-api-openapi.yml
+  - type: GitHubRepository
+    url: https://github.com/AntelopeIO/leap
+  - type: Documentation
+    url: https://developers.eos.io/
+- aid: eosio:eosio-get-table-rows-api
+  name: EOSIO Get Table Rows API
+  description: The Get Table Rows API from EOSIO — 1 operation(s) for get table rows.
+  humanURL: https://github.com/AntelopeIO/leap
+  tags:
+  - Get Table Rows
+  properties:
+  - type: OpenAPI
+    url: openapi/eosio-get-table-rows-api-openapi.yml
+  - type: GitHubRepository
+    url: https://github.com/AntelopeIO/leap
+  - type: Documentation
+    url: https://developers.eos.io/
+- aid: eosio:eosio-push-transaction-api
+  name: EOSIO Push Transaction API
+  description: The Push Transaction API from EOSIO — 1 operation(s) for push transaction.
+  humanURL: https://github.com/AntelopeIO/leap
+  tags:
+  - Push Transaction
+  properties:
+  - type: OpenAPI
+    url: openapi/eosio-push-transaction-api-openapi.yml
+  - type: GitHubRepository
+    url: https://github.com/AntelopeIO/leap
+  - type: Documentation
+    url: https://developers.eos.io/
+- aid: eosio:eosio-send-transaction-api
+  name: EOSIO Send Transaction API
+  description: The Send Transaction API from EOSIO — 1 operation(s) for send transaction.
+  humanURL: https://github.com/AntelopeIO/leap
+  tags:
+  - Send Transaction
+  properties:
+  - type: OpenAPI
+    url: openapi/eosio-send-transaction-api-openapi.yml
+  - type: GitHubRepository
+    url: https://github.com/AntelopeIO/leap
+  - type: Documentation
+    url: https://developers.eos.io/
 common:
   - type: AgenticAccess
     url: agentic-access/eosio-agentic-access.yml
