@@ -1,0 +1,32 @@
+{
+  "provider": "eosio",
+  "sources": [
+    "eosio-get-abi-api-openapi.yml",
+    "eosio-get-account-api-openapi.yml",
+    "eosio-get-block-api-openapi.yml",
+    "eosio-get-code-api-openapi.yml",
+    "eosio-get-currency-balance-api-openapi.yml",
+    "eosio-get-info-api-openapi.yml",
+    "eosio-get-required-keys-api-openapi.yml",
+    "eosio-get-table-rows-api-openapi.yml",
+    "eosio-push-transaction-api-openapi.yml",
+    "eosio-send-transaction-api-openapi.yml"
+  ],
+  "outputs": [
+    "eosio-get-abi-api-openapi.yml",
+    "eosio-get-account-api-openapi.yml",
+    "eosio-get-block-api-openapi.yml",
+    "eosio-get-code-api-openapi.yml",
+    "eosio-get-currency-balance-api-openapi.yml",
+    "eosio-get-info-api-openapi.yml",
+    "eosio-get-required-keys-api-openapi.yml",
+    "eosio-get-table-rows-api-openapi.yml",
+    "eosio-push-transaction-api-openapi.yml",
+    "eosio-send-transaction-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
