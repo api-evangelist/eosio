@@ -207,6 +207,10 @@ apis:
   - type: Documentation
     url: https://developers.eos.io/
 common:
+  - type: IssueTracker
+    url: https://github.com/AntelopeIO/leap/issues
+  - type: ContributionGuide
+    url: https://github.com/AntelopeIO/leap/blob/main/CONTRIBUTING.md
   - type: AgenticAccess
     url: agentic-access/eosio-agentic-access.yml
   - type: DomainSecurity
