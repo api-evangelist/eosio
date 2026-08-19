@@ -23,7 +23,7 @@ access: 3rd-Party
 created: '2025-02-08'
 modified: '2026-05-19'
 position: Consumer
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 description: >-
   EOSIO, now known as the Antelope protocol, is a free, open-source blockchain software protocol that provides
   developers and entrepreneurs with a platform on which to build, deploy, and run high-performing blockchain
