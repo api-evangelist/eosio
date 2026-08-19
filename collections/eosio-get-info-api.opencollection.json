@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "EOSIO / Antelope Nodeos Chain Get Abi Get Info API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get Info",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get chain information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{node}/v1/chain/get_info"
+          },
+          "docs": "Returns general state information about the blockchain, including the latest block, head block producer, and chain ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

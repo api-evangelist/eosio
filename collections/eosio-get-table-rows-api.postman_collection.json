@@ -1,0 +1,146 @@
+{
+  "item": [
+    {
+      "id": "15b39ffb-8df2-4a26-862a-7e82289e580d",
+      "name": "Get Table Rows",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "33af3cde-5ea2-4d79-9321-4d24888f5e52",
+          "name": "Read rows from a contract table",
+          "request": {
+            "name": "Read rows from a contract table",
+            "description": {
+              "content": "Returns rows from a smart contract's multi_index table, given the contract account, scope, and table name.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "get_table_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Base URL of an EOS/Antelope node.",
+                  "type": "any",
+                  "value": "{{node}}",
+                  "key": "node"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<string>\",\n  \"scope\": \"<string>\",\n  \"table\": \"<string>\",\n  \"json\": true,\n  \"limit\": 10,\n  \"lower_bound\": \"<string>\",\n  \"upper_bound\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6d7a67cc-d56e-4035-b157-f38ccebb60f4",
+              "name": "Table rows.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get_table_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Base URL of an EOS/Antelope node.",
+                      "type": "any",
+                      "value": "{{node}}",
+                      "key": "node"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<string>\",\n  \"scope\": \"<string>\",\n  \"table\": \"<string>\",\n  \"json\": true,\n  \"limit\": 10,\n  \"lower_bound\": \"<string>\",\n  \"upper_bound\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"more\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Base URL of an EOS/Antelope node.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://eos.greymass.com",
+      "key": "node"
+    },
+    {
+      "type": "string",
+      "value": "{{node}}/v1/chain",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "0d21d306-acdf-40a1-b035-601a66e4ede2",
+    "name": "EOSIO / Antelope Nodeos Chain Get Abi Get Table Rows API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HTTP/JSON RPC interface exposed by the chain_api_plugin in nodeos, the reference EOSIO (now Antelope) blockchain node implementation. The chain API allows clients to read blockchain state, fetch blocks and accounts, inspect ABI and contract data, and submit signed transactions to the network.\n\nContact Support:\n Name: EOS Network Foundation",
+      "type": "text/plain"
+    }
+  }
+}

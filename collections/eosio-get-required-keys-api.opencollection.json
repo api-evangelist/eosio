@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "EOSIO / Antelope Nodeos Chain Get Abi Get Required Keys API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get Required Keys",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get required keys for a transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{node}/v1/chain/get_required_keys",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Given a transaction and a set of available keys, returns the subset of keys actually required to authorize the transaction."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

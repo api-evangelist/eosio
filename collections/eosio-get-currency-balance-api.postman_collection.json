@@ -1,0 +1,146 @@
+{
+  "item": [
+    {
+      "id": "d2877653-91ca-456b-8c14-fbae7ee94053",
+      "name": "Get Currency Balance",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9c76a558-e103-48d5-b309-ec00c8fbf431",
+          "name": "Get currency balance for an account",
+          "request": {
+            "name": "Get currency balance for an account",
+            "description": {
+              "content": "Returns the balance of a token symbol held by an account on a given token contract.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "get_currency_balance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Base URL of an EOS/Antelope node.",
+                  "type": "any",
+                  "value": "{{node}}",
+                  "key": "node"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<string>\",\n  \"account\": \"<string>\",\n  \"symbol\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ee75ed93-7f6c-4d41-89dd-40f4d9a347c1",
+              "name": "List of asset strings representing balances.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get_currency_balance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Base URL of an EOS/Antelope node.",
+                      "type": "any",
+                      "value": "{{node}}",
+                      "key": "node"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"eosio.token\",\n  \"account\": \"<string>\",\n  \"symbol\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Base URL of an EOS/Antelope node.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://eos.greymass.com",
+      "key": "node"
+    },
+    {
+      "type": "string",
+      "value": "{{node}}/v1/chain",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "0cbdd105-3ad8-4323-8253-e7a7000b0377",
+    "name": "EOSIO / Antelope Nodeos Chain Get Abi Get Currency Balance API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HTTP/JSON RPC interface exposed by the chain_api_plugin in nodeos, the reference EOSIO (now Antelope) blockchain node implementation. The chain API allows clients to read blockchain state, fetch blocks and accounts, inspect ABI and contract data, and submit signed transactions to the network.\n\nContact Support:\n Name: EOS Network Foundation",
+      "type": "text/plain"
+    }
+  }
+}

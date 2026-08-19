@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "EOSIO / Antelope Nodeos Chain Get Abi Get Block API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get Block",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a block by ID or number",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{node}/v1/chain/get_block",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns the contents of a block identified by its block number or block ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

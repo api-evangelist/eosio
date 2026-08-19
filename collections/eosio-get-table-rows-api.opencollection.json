@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "EOSIO / Antelope Nodeos Chain Get Abi Get Table Rows API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get Table Rows",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read rows from a contract table",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{node}/v1/chain/get_table_rows",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns rows from a smart contract's multi_index table, given the contract account, scope, and table name."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

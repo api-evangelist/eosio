@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "EOSIO / Antelope Nodeos Chain Get Abi Get Account API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get Account",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get account information",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{node}/v1/chain/get_account",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns metadata about an account, including resources (RAM, CPU, NET), permissions, voting info, and linked authorities."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,146 @@
+{
+  "item": [
+    {
+      "id": "c7985cc3-41a7-4f7b-a50b-801e5da65b50",
+      "name": "Get Block",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c3e2efd2-a576-411e-b615-2bde85140898",
+          "name": "Get a block by ID or number",
+          "request": {
+            "name": "Get a block by ID or number",
+            "description": {
+              "content": "Returns the contents of a block identified by its block number or block ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "get_block"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Base URL of an EOS/Antelope node.",
+                  "type": "any",
+                  "value": "{{node}}",
+                  "key": "node"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"block_num_or_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3de9139b-a7a0-493b-9709-80835df8dcb4",
+              "name": "Block contents.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get_block"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Base URL of an EOS/Antelope node.",
+                      "type": "any",
+                      "value": "{{node}}",
+                      "key": "node"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"block_num_or_id\": \"12345678\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Base URL of an EOS/Antelope node.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://eos.greymass.com",
+      "key": "node"
+    },
+    {
+      "type": "string",
+      "value": "{{node}}/v1/chain",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d3397e8b-b92f-4d83-813f-83a3eac80e24",
+    "name": "EOSIO / Antelope Nodeos Chain Get Abi Get Block API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HTTP/JSON RPC interface exposed by the chain_api_plugin in nodeos, the reference EOSIO (now Antelope) blockchain node implementation. The chain API allows clients to read blockchain state, fetch blocks and accounts, inspect ABI and contract data, and submit signed transactions to the network.\n\nContact Support:\n Name: EOS Network Foundation",
+      "type": "text/plain"
+    }
+  }
+}

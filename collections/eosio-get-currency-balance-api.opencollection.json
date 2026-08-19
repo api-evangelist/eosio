@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "EOSIO / Antelope Nodeos Chain Get Abi Get Currency Balance API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get Currency Balance",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get currency balance for an account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{node}/v1/chain/get_currency_balance",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns the balance of a token symbol held by an account on a given token contract."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

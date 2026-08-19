@@ -1,0 +1,146 @@
+{
+  "item": [
+    {
+      "id": "9957e46a-f7d8-41c6-baad-95fd57448c17",
+      "name": "Push Transaction",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9a9832dd-ba7d-4841-a99d-f5f27bcb861c",
+          "name": "Push a signed transaction",
+          "request": {
+            "name": "Push a signed transaction",
+            "description": {
+              "content": "Submits a signed transaction to the blockchain for execution. Deprecated in favor of /send_transaction on newer nodeos releases.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "push_transaction"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Base URL of an EOS/Antelope node.",
+                  "type": "any",
+                  "value": "{{node}}",
+                  "key": "node"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f6e664ab-0e1b-4278-8341-59932990db96",
+              "name": "Transaction processing result.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "push_transaction"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Base URL of an EOS/Antelope node.",
+                      "type": "any",
+                      "value": "{{node}}",
+                      "key": "node"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Base URL of an EOS/Antelope node.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://eos.greymass.com",
+      "key": "node"
+    },
+    {
+      "type": "string",
+      "value": "{{node}}/v1/chain",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "027e2c2f-21e1-4642-a23c-5de9d64c87bc",
+    "name": "EOSIO / Antelope Nodeos Chain Get Abi Push Transaction API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HTTP/JSON RPC interface exposed by the chain_api_plugin in nodeos, the reference EOSIO (now Antelope) blockchain node implementation. The chain API allows clients to read blockchain state, fetch blocks and accounts, inspect ABI and contract data, and submit signed transactions to the network.\n\nContact Support:\n Name: EOS Network Foundation",
+      "type": "text/plain"
+    }
+  }
+}

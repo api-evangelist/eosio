@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "EOSIO / Antelope Nodeos Chain Get Abi Push Transaction API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Push Transaction",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Push a signed transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{node}/v1/chain/push_transaction",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submits a signed transaction to the blockchain for execution. Deprecated in favor of /send_transaction on newer nodeos releases."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

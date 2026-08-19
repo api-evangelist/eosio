@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "EOSIO / Antelope Nodeos Chain Get Abi Send Transaction API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Send Transaction",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send a signed transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{node}/v1/chain/send_transaction",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submits a signed transaction to the blockchain. Replaces push_transaction on modern nodeos releases."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

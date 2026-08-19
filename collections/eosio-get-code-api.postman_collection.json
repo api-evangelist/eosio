@@ -1,0 +1,146 @@
+{
+  "item": [
+    {
+      "id": "4ad05d4a-e906-476b-bbb9-eaff07b47156",
+      "name": "Get Code",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9a35b3c2-8c5f-4ace-8bca-c81baeae0d26",
+          "name": "Get contract code for an account",
+          "request": {
+            "name": "Get contract code for an account",
+            "description": {
+              "content": "Returns the WASM code hash and ABI for a contract account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "get_code"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Base URL of an EOS/Antelope node.",
+                  "type": "any",
+                  "value": "{{node}}",
+                  "key": "node"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"account_name\": \"<string>\",\n  \"code_as_wasm\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "31e5039f-ed77-4e6b-ad47-c0e4c958d2f9",
+              "name": "Code information.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get_code"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Base URL of an EOS/Antelope node.",
+                      "type": "any",
+                      "value": "{{node}}",
+                      "key": "node"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"account_name\": \"<string>\",\n  \"code_as_wasm\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Base URL of an EOS/Antelope node.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://eos.greymass.com",
+      "key": "node"
+    },
+    {
+      "type": "string",
+      "value": "{{node}}/v1/chain",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3c93505e-4540-46ee-825e-edfc34fd521e",
+    "name": "EOSIO / Antelope Nodeos Chain Get Abi Get Code API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HTTP/JSON RPC interface exposed by the chain_api_plugin in nodeos, the reference EOSIO (now Antelope) blockchain node implementation. The chain API allows clients to read blockchain state, fetch blocks and accounts, inspect ABI and contract data, and submit signed transactions to the network.\n\nContact Support:\n Name: EOS Network Foundation",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "item": [
+    {
+      "id": "07c0af44-390f-470a-8e61-36fb51e3ccfe",
+      "name": "Get Info",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "989dfc72-6759-478d-bfea-10b3531e3cd9",
+          "name": "Get chain information",
+          "request": {
+            "name": "Get chain information",
+            "description": {
+              "content": "Returns general state information about the blockchain, including the latest block, head block producer, and chain ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "get_info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Base URL of an EOS/Antelope node.",
+                  "type": "any",
+                  "value": "{{node}}",
+                  "key": "node"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "63b73c13-2b81-41c1-9b14-7dbbddbb1cce",
+              "name": "Current chain state.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get_info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Base URL of an EOS/Antelope node.",
+                      "type": "any",
+                      "value": "{{node}}",
+                      "key": "node"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"server_version\": \"string\",\n  \"chain_id\": \"string\",\n  \"head_block_num\": 4361,\n  \"last_irreversible_block_num\": 4631,\n  \"last_irreversible_block_id\": \"string\",\n  \"head_block_id\": \"string\",\n  \"head_block_time\": \"1959-11-18T09:32:01.766Z\",\n  \"head_block_producer\": \"string\",\n  \"virtual_block_cpu_limit\": 1520,\n  \"virtual_block_net_limit\": 1811,\n  \"block_cpu_limit\": 3504,\n  \"block_net_limit\": 6247,\n  \"server_version_string\": \"string\",\n  \"fork_db_head_block_num\": 2329,\n  \"fork_db_head_block_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Base URL of an EOS/Antelope node.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://eos.greymass.com",
+      "key": "node"
+    },
+    {
+      "type": "string",
+      "value": "{{node}}/v1/chain",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e0d5f4a3-6966-4929-add8-26832b5937fb",
+    "name": "EOSIO / Antelope Nodeos Chain Get Abi Get Info API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "HTTP/JSON RPC interface exposed by the chain_api_plugin in nodeos, the reference EOSIO (now Antelope) blockchain node implementation. The chain API allows clients to read blockchain state, fetch blocks and accounts, inspect ABI and contract data, and submit signed transactions to the network.\n\nContact Support:\n Name: EOS Network Foundation",
+      "type": "text/plain"
+    }
+  }
+}
