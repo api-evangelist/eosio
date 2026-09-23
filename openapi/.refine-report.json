@@ -1,16 +1,7 @@
 {
   "provider": "eosio",
   "sources": [
-    "eosio-get-abi-api-openapi.yml",
-    "eosio-get-account-api-openapi.yml",
-    "eosio-get-block-api-openapi.yml",
-    "eosio-get-code-api-openapi.yml",
-    "eosio-get-currency-balance-api-openapi.yml",
-    "eosio-get-info-api-openapi.yml",
-    "eosio-get-required-keys-api-openapi.yml",
-    "eosio-get-table-rows-api-openapi.yml",
-    "eosio-push-transaction-api-openapi.yml",
-    "eosio-send-transaction-api-openapi.yml"
+    "_original/eosio-nodeos-chain-api-openapi.yml"
   ],
   "outputs": [
     "eosio-get-abi-api-openapi.yml",
@@ -27,6 +18,41 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "eosio-nodeos-chain-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "eosio-nodeos-chain-api-openapi.yml: tagged paths GET /get_info -> Get Info",
+    "eosio-nodeos-chain-api-openapi.yml: tagged paths POST /get_block -> Get Block",
+    "eosio-nodeos-chain-api-openapi.yml: tagged paths POST /get_account -> Get Account",
+    "eosio-nodeos-chain-api-openapi.yml: tagged paths POST /get_abi -> Get Abi",
+    "eosio-nodeos-chain-api-openapi.yml: tagged paths POST /get_code -> Get Code",
+    "eosio-nodeos-chain-api-openapi.yml: tagged paths POST /get_currency_balance -> Get Currency Balance",
+    "eosio-nodeos-chain-api-openapi.yml: tagged paths POST /get_table_rows -> Get Table Rows",
+    "eosio-nodeos-chain-api-openapi.yml: tagged paths POST /push_transaction -> Push Transaction",
+    "eosio-nodeos-chain-api-openapi.yml: tagged paths POST /send_transaction -> Send Transaction",
+    "eosio-nodeos-chain-api-openapi.yml: tagged paths POST /get_required_keys -> Get Required Keys",
+    "eosio-nodeos-chain-api-openapi.yml: declared missing tag: Get Abi",
+    "eosio-nodeos-chain-api-openapi.yml: declared missing tag: Get Account",
+    "eosio-nodeos-chain-api-openapi.yml: declared missing tag: Get Block",
+    "eosio-nodeos-chain-api-openapi.yml: declared missing tag: Get Code",
+    "eosio-nodeos-chain-api-openapi.yml: declared missing tag: Get Currency Balance",
+    "eosio-nodeos-chain-api-openapi.yml: declared missing tag: Get Info",
+    "eosio-nodeos-chain-api-openapi.yml: declared missing tag: Get Required Keys",
+    "eosio-nodeos-chain-api-openapi.yml: declared missing tag: Get Table Rows",
+    "eosio-nodeos-chain-api-openapi.yml: declared missing tag: Push Transaction",
+    "eosio-nodeos-chain-api-openapi.yml: declared missing tag: Send Transaction",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "eosio-get-abi-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "eosio-get-account-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "eosio-get-block-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "eosio-get-code-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "eosio-get-currency-balance-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "eosio-get-info-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "eosio-get-required-keys-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "eosio-get-table-rows-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "eosio-push-transaction-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "eosio-send-transaction-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

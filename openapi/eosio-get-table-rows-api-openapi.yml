@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: EOSIO / Antelope Nodeos Chain Get Abi Get Table Rows API
+  title: EOSIO / Antelope Nodeos Chain Get Table Rows API
   description: HTTP/JSON RPC interface exposed by the chain_api_plugin in nodeos, the reference EOSIO (now Antelope) blockchain node implementation. The chain API allows clients to read blockchain state, fetch blocks and accounts, inspect ABI and contract data, and submit signed transactions to the network.
   version: '1.0'
   contact:
