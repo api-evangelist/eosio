@@ -223,6 +223,12 @@ apis:
   - type: Documentation
     url: https://developers.eos.io/
 common:
+  - type: Plans
+    url: plans/eosio-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/eosio-rate-limits.yml
+  - type: FinOps
+    url: finops/eosio-finops.yml
   - url: https://www.eosnetwork.com/press/
     type: Blog
   - type: IssueTracker
