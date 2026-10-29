@@ -1,4 +1,4 @@
-# EOSIO (eosio)
+# EOSIO
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,122 +66,140 @@
 
 EOSIO, now known as the Antelope protocol, is a free, open-source blockchain software protocol that provides developers and entrepreneurs with a platform on which to build, deploy, and run high-performing blockchain applications. Reference node software (nodeos) exposes HTTP/JSON RPC plugins for chain reads, history queries, transaction submission, and producer operations.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/eosio/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/eosio/refs/heads/main/apis.yml)
+**Areas:** Antelope · Blockchain · EOS
 
-## Scope
+## EOSIO on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for EOSIO is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/eosio/](https://apis.io/providers/eosio/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (13)
 
-- Antelope
-- Blockchain
-- EOS
+- [EOSIO Nodeos History API](https://apis.io/apis/eosio/nodeos-history-api/) — The history_api_plugin exposes endpoints under /v1/history for retrieving historical actions, transactions, key accounts, and controlled accounts. On modern…
+- [EOSIO Nodeos Producer API](https://apis.io/apis/eosio/nodeos-producer-api/) — The producer_api_plugin exposes endpoints under /v1/producer for controlling block production on a node, including pause, resume, schedule snapshots, and…
+- [EOSIO Nodeos Net API](https://apis.io/apis/eosio/nodeos-net-api/) — The net_api_plugin exposes endpoints under /v1/net for inspecting and managing peer-to-peer connections of an Antelope node, including connections, status,…
+- [EOSIO Get Abi API](https://apis.io/apis/eosio/eosio-get-abi-api/) — The Get Abi API from EOSIO — 1 operation(s) for get abi.
+- [EOSIO Get Account API](https://apis.io/apis/eosio/eosio-get-account-api/) — The Get Account API from EOSIO — 1 operation(s) for get account.
+- [EOSIO Get Block API](https://apis.io/apis/eosio/eosio-get-block-api/) — The Get Block API from EOSIO — 1 operation(s) for get block.
+- [EOSIO Get Code API](https://apis.io/apis/eosio/eosio-get-code-api/) — The Get Code API from EOSIO — 1 operation(s) for get code.
+- [EOSIO Get Currency Balance API](https://apis.io/apis/eosio/eosio-get-currency-balance-api/) — The Get Currency Balance API from EOSIO — 1 operation(s) for get currency balance.
+- [EOSIO Get Info API](https://apis.io/apis/eosio/eosio-get-info-api/) — The Get Info API from EOSIO — 1 operation(s) for get info.
+- [EOSIO Get Required Keys API](https://apis.io/apis/eosio/eosio-get-required-keys-api/) — The Get Required Keys API from EOSIO — 1 operation(s) for get required keys.
+- [EOSIO Get Table Rows API](https://apis.io/apis/eosio/eosio-get-table-rows-api/) — The Get Table Rows API from EOSIO — 1 operation(s) for get table rows.
+- [EOSIO Push Transaction API](https://apis.io/apis/eosio/eosio-push-transaction-api/) — The Push Transaction API from EOSIO — 1 operation(s) for push transaction.
+- [EOSIO Send Transaction API](https://apis.io/apis/eosio/eosio-send-transaction-api/) — The Send Transaction API from EOSIO — 1 operation(s) for send transaction.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-02-08
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### EOSIO Nodeos Chain API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The chain_api_plugin in nodeos exposes JSON-RPC endpoints under /v1/chain for reading blockchain state, retrieving blocks and accounts, inspecting smart contract ABIs and tables, and submitting signed transactions to the network.
+- [Eosio Agentic Access](https://apis.io/agentic-access/eosio/eosio-agentic-access/)
 
-- **Human URL:** [https://github.com/AntelopeIO/leap](https://github.com/AntelopeIO/leap)
+#### Collections (11)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Antelope
-- Blockchain
-- Chain
-- JSON-RPC
+- [EOSIO / Antelope Nodeos Chain Get Abi API](https://apis.io/collections/eosio/open-eosio-get-abi-api/)
+- [EOSIO / Antelope Nodeos Chain Get Abi Get Account API](https://apis.io/collections/eosio/open-eosio-get-account-api/)
+- [EOSIO / Antelope Nodeos Chain Get Abi Get Block API](https://apis.io/collections/eosio/open-eosio-get-block-api/)
+- [EOSIO / Antelope Nodeos Chain Get Abi Get Code API](https://apis.io/collections/eosio/open-eosio-get-code-api/)
+- [EOSIO / Antelope Nodeos Chain Get Abi Get Currency Balance API](https://apis.io/collections/eosio/open-eosio-get-currency-balance-api/)
+- [EOSIO / Antelope Nodeos Chain Get Abi Get Info API](https://apis.io/collections/eosio/open-eosio-get-info-api/)
+- [EOSIO / Antelope Nodeos Chain Get Abi Get Required Keys API](https://apis.io/collections/eosio/open-eosio-get-required-keys-api/)
+- [EOSIO / Antelope Nodeos Chain Get Abi Get Table Rows API](https://apis.io/collections/eosio/open-eosio-get-table-rows-api/)
+- [EOSIO / Antelope Nodeos Chain API](https://apis.io/collections/eosio/open-eosio-nodeos-chain-api/)
+- [EOSIO / Antelope Nodeos Chain Get Abi Push Transaction API](https://apis.io/collections/eosio/open-eosio-push-transaction-api/)
+- [EOSIO / Antelope Nodeos Chain Get Abi Send Transaction API](https://apis.io/collections/eosio/open-eosio-send-transaction-api/)
 
-#### Properties
+#### Security (1)
 
-- [OpenAPI](openapi/eosio-nodeos-chain-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/eosio-nodeos-chain-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/eosio-nodeos-chain-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [GitHub Repository](https://github.com/AntelopeIO/leap)
-- [Documentation](https://developers.eos.io/)
+Authentication, trust centre, and vulnerability disclosure.
 
-### EOSIO Nodeos History API
+- [Eosio Domain Security](https://apis.io/security/eosio/eosio-domain-security/)
 
-The history_api_plugin exposes endpoints under /v1/history for retrieving historical actions, transactions, key accounts, and controlled accounts. On modern Antelope deployments this is typically replaced by external history solutions like Hyperion or dfuse.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://github.com/AntelopeIO/leap](https://github.com/AntelopeIO/leap)
+Published plans, tiers and prices.
 
-#### Tags
+- [Eosio Plans Pricing](https://apis.io/plans/eosio/eosio-plans-pricing/)
 
-- Antelope
-- Blockchain
-- History
-- JSON-RPC
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [GitHub Repository](https://github.com/AntelopeIO/leap)
-- [Documentation](https://developers.eos.io/)
-- [Postman Collection](collections/eosio-nodeos-chain-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/eosio-nodeos-chain-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Eosio Rate Limits](https://apis.io/rate-limits/eosio/eosio-rate-limits/)
 
-### EOSIO Nodeos Producer API
+#### FinOps (1)
 
-The producer_api_plugin exposes endpoints under /v1/producer for controlling block production on a node, including pause, resume, schedule snapshots, and manage protocol features. Restricted to operators of block producing nodes.
+What the API costs to run, by operation.
 
-- **Human URL:** [https://github.com/AntelopeIO/leap](https://github.com/AntelopeIO/leap)
+- [Eosio Finops](https://apis.io/finops/eosio/eosio-finops/)
 
-#### Tags
+## Where to find this API
 
-- Antelope
-- Block Production
-- Blockchain
-- JSON-RPC
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-#### Properties
-
-- [GitHub Repository](https://github.com/AntelopeIO/leap)
-- [Postman Collection](collections/eosio-nodeos-chain-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/eosio-nodeos-chain-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### EOSIO Nodeos Net API
-
-The net_api_plugin exposes endpoints under /v1/net for inspecting and managing peer-to-peer connections of an Antelope node, including connections, status, connect, and disconnect operations.
-
-- **Human URL:** [https://github.com/AntelopeIO/leap](https://github.com/AntelopeIO/leap)
-
-#### Tags
-
-- Antelope
-- Blockchain
-- JSON-RPC
-- Networking
-
-#### Properties
-
-- [GitHub Repository](https://github.com/AntelopeIO/leap)
-- [Postman Collection](collections/eosio-nodeos-chain-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/eosio-nodeos-chain-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/eosio)
 - [Website](https://eosnetwork.com/)
-- [Portal](https://developers.eos.io/)
-- [Getting Started](https://developers.eos.io/welcome/latest/getting-started-guide/index)
-- [Tutorials](https://developers.eos.io/welcome/latest/tutorials/index)
 - [Documentation](https://developers.eos.io/welcome/latest/reference/index)
-- [F A Q](https://developers.eos.io/welcome/latest/faq/index)
-- [GitHub Organization](https://github.com/AntelopeIO)
-- [GitHub Repository](https://github.com/AntelopeIO/leap)
+- [Getting started](https://developers.eos.io/welcome/latest/getting-started-guide/index)
 - [Changelog](https://github.com/AntelopeIO/leap/releases)
-- [Privacy Policy](https://eos.io/legal/privacy-policy/)
-- [Terms of Service](https://eos.io/legal/terms-of-use/)
+- [Blog](https://www.eosnetwork.com/press/)
+- [Terms of service](https://eos.io/legal/terms-of-use/)
+- [Privacy policy](https://eos.io/legal/privacy-policy/)
+- [GitHub](https://github.com/AntelopeIO)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 29.3** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 42.6 |
+| Contract governance | 0.0 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 26.3 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 13.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/eosio/](https://apis.io/providers/eosio/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for EOSIO: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/eosio/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
